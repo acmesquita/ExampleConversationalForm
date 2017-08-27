@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Conversional Form</title>
+    <!-- <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js"></script> -->
+    <script type="text/javascript" src="https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js" crossorigin></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <form id="form" cf-form cf-prevent-autofocus>
+            <label for="tipoOcorrencia">Tipo de Ocorrência</label>
+<!--             <input type="text" id="name" name="name" cf-questions="What is your name?|Please tell me your name."/>
+      -->   <select name="tipoOcorrencia" id="tipoOcorrencia" cf-questions="Qual o Tipo de Ocorrência?|O que aconteceu?">
+            	<option>Acidente de Trânsito</option>
+            	<option>Agressão Física</option>
+            	<option>Urgência Psiquiátrica</option>
+            	<option>Queda</option>
+            	<option>Outro</option>
+            </select>
+            <label for="quantPacientes">Quantidade de Vítimas</label>
+            <input type="text" name="quantPacientes" id="quantPacientes" cf-questions="Quantos Pacientes envolvidos?|Quantas Pessoas se machucaram?">
+
+            <div id="perguntaSobrePaciente">
+            	<label for="nomeVitima">Nome da Vítima</label>
+            	<input type="text" name="nomeVitima" id="nomeVitima" cf-questions="Qual o nome da vítima?">
+
+				<label for="idadeVitima">Idade da Vítima</label>
+            	<input type="text" name="idadeVitima" id="idadeVitima" cf-questions="Qual a idade da vítima?|Quantos anos a {nomeVitima} possui?">
+
+            	<label for="sexoVitima">Sexo da Vítima</label>
+            	<select name="sexoVitima" id="sexoVitima" cf-questions="Qual o sexo da vítima?|Qual o gênero do(a) {nomeVitima}?">
+	            	<option>Mulher</option>
+	            	<option>Homem</option>
+	            	<option>Não é possível identificar</option>
+            	</select>
+
+            	<label for="ingestaoBebida">Ingestão de Bebidas Alcoólica?</label>
+            	<select name="ingestaoBebida" id="ingestaoBebida" cf-questions="A vítima ingeriu bebida alcoólica?|A vítima está sobre efeito de algumas bebida alcoólica?">
+	            	<option>Sim</option>
+	            	<option>Não</option>
+	            	<option>Não tenho certeza</option>
+            	</select>
+
+            	<label for="sangramento">Sangramento</label>
+            	<select name="sangramento" id="sangramento" cf-questions="A vítima está com algum sangramento?|Na vítima se encontra sangue?">
+	            	<option>Sim</option>
+	            	<option>Não</option>
+	            	<option>Não tenho certeza</option>
+            	</select>
+
+            	<label for="fraturas">fraturas</label>
+            	<select name="fraturas" id="fraturas" cf-questions="A vítima está com alguma fratura?|Há fraturas na vítima?">
+	            	<option>Sim</option>
+	            	<option>Não</option>
+	            	<option>Não tenho certeza</option>
+            	</select>
+
+            	<label for="consciencia">consciencia</label>
+            	<select name="consciencia" id="consciencia" cf-questions="Qual o nível de consciência da vítima?|Como a vítima está?">
+	            	<option>Não abre os olhos</option>
+	            	<option>Abre os olhos com algum insentivo físico</option>
+	            	<option>Abre os olhos quando alguém chama</option>
+	            	<option>Está de olhos abertos</option>
+            	</select>
+            </div>
+
+            <button type="submit">Send</button>
+        </form>
+
+        <script type="text/javascript">
+        	$('#form').on('submit', function(e){
+		        alert("Deu certo =)")
+		    });
+
+
+        </script>
+
+</body>
+</html>
